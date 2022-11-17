@@ -1,0 +1,88 @@
+@media (max-width: 767.99px) {
+  .header__container {
+    flex-direction: column;
+  }
+
+  .header__right {
+    margin-top: 30px;
+    padding-bottom: 10px;
+    /* justify-content: center;  убираем его, т.к. ломается флекс и не помещается навигация */
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .hero__title {
+    font-style: 70px;
+    line-height: 84px;
+  }
+
+  .grid {
+    grid-template-columns: auto;
+    row-gap: 40px;
+  }
+
+  :root {
+    --offset: 60px;
+  }
+
+  .portfolio-item--reverse .portfolio-item__col:first-child {
+    order: 1;
+  }
+
+  .portfolio-item--reverse .portfolio-item__col:last-child {
+    order: 2;
+  }
+
+  .portfolio-item:not(:last-child) {
+    margin-bottom: 60px;
+}
+
+.footer {
+  padding-bottom: 90px;
+}
+}
+
+/* line-height: 84px; из головы, т.к. если нет примера адаптива, то добавляем 10-15px от размера шрифта */
+/* убираем гриды: ставим не 2 колонки по 1fr, а ставим auto и на мобилке они становятся вниз друг за другом и ставим отступ raw-gap 40px */
+/* меняем нашу переменную offset было 190px, ставим 60px и она автоматичестки везде меняется при этом разрешении экрана */
+/* reverse на мобилке не нужен, поэтому его убираем тем, что переопределяем его обратно order 1; order 2 */
+/* гридовые колонки с картинками - большой отступ 120px. убираем его: берем весь селектор из консоли .portfolio-item:not(:last-child) {margin-bottom: 120px;} и менчем на 60px */
+/* меняем в футере паддинг внизу, как паддинг вверху между лого и секцией services  на 90px*/
+
+/* делаем минимальное разрешение 320px, тут верстка ломается : делаем скролл внутри header__right задаем 100% ширины и оверфлоу х авто, т.е. в момент, когда нужен скролл = будет скролл/ Проблема не только в тексте, но в заголовке, поэтому overflow-y hidden, добавим маржин топ 30 чтобы отступить от лого, и выравниваем по центру justify-content center. Чтобы палочка скролла не наезжала на навигацию = делаем padding bottom 10px */
+
+@media (max-width: 575.99px) {
+  .hero__title {
+    font-size: 40px;
+    line-height: 54px;
+  }
+
+  .hero {
+    padding-top: 200px;
+    height: auto;
+    min-height: auto;
+  }
+
+  .about__item:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+  .about__title {
+    font-size: 30px;
+    line-height: 44px;
+    margin-bottom: 30px;
+  }
+
+  .quoute__title {
+    margin-bottom: 30px;
+  }
+
+  .quoute__text {
+    font-size: 26px;
+    line-height: 40px;
+  }
+
+}
+
+/* для hero__title меняем размер шрифта на 40px, меняет отступ межну навигацией и заголовком, такой большой уже не нужен, ставим условно 200px,  мин. высота и просто высота ставим авто везде будет по размеру контента. Меняем отступ в секции, вместе 60 ставим 30*/
