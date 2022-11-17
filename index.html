@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
-    <!-- атрибут defer нужен для того, чтобы скрипт грузился параллельно дому, и окончательно загрузился, когда загрузится весь дом -->
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -16,8 +15,6 @@
       <div class="container header__container">
         <a class="logo">Company</a>
         <div class="header__right">
-          <!-- btn-reset этот класс будет сбрасывать ненужные стили для кнопки -->
-          <!-- почему svg вставляем прям в html - при таком условии мы сможем управлять этой иконкой, и сможем добавить hover на изменение цвета при наведении, если сделать ее как background-image, то изменения цвета не будет -->
           <button class="btn-reset header__btn header__search" aria-label="Search">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="11.7666" cy="11.7666" r="8.98856" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -89,7 +86,7 @@
           </div>
           <div class="about__video">
             <!-- добавляем атрибут poster, в котором будет картинка из макета, а при нажатии на плей - будет воспроизводиться видео, атрибут muted - позволяет заглушить видео (если не заглушать, оно может не открыться в браузере), атрибут preload="metadata"(какие-то данные загружаются, none - нет предзагрузки, auto - всегда загружает все видео) означает, что видео при открытии страницы начала немного загружаться, и при клике уже было немного загружено и воспроизводилось. атрибут playsinline - этот атрибут для видео на айфонах, чтобы когда пользователь нажмет на плей - пользователю не открывалось видео во внешних плеерах-->
-            <video src="video.mp4" poster="/Company/img/video-poster.jpg" muted preload="metadata" playsinline></video>
+            <video src="video.mp4" poster="./img/video-poster.jpg" muted preload="metadata" playsinline></video>
             <button class="btn-reset about__play" aria-label="Play video">
               <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="50" fill="white"/>
@@ -198,7 +195,6 @@
           <address class="footer__address">Dorivit BV, Monitorweg&nbsp;1, Almere 1322BJ, Netherlands</address>
           <ul class="list-reset footer__social social">
             <li class="social-item">
-              <!-- target="_blank" будет открывать ссылку в новом окне браузера -->
               <a href="" class="social__link" target="_blank" aria-label="Facebook">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M20 0.000488281C8.95431 0.000488281 0 8.95479 0 20.0005C0 31.0462 8.95431 40.0005 20 40.0005C31.0457 40.0005 40 31.0462 40 20.0005C40 8.95479 31.0457 0.000488281 20 0.000488281ZM22.0846 20.879V31.7601H17.5826V20.8794H15.3333V17.1297H17.5826V14.8785C17.5826 11.8195 18.8526 10.0005 22.461 10.0005H25.4651V13.7506H23.5873C22.1827 13.7506 22.0897 14.2746 22.0897 15.2526L22.0846 17.1293H25.4863L25.0883 20.879H22.0846Z"/>
@@ -223,7 +219,6 @@
         </div>
         <div class="footer__col">
           <h2 class="footer__title">Id&nbsp;sodales interdum dui mollis non in&nbsp;odio</h2>
-          <!-- форма подписки, поэтому используем тег form, внутри будет input, тип email, name - имя поля тоже email, placeholder - описание E-mail, стрелочку делаем как кнопку button, она будет пустая, т.к. будет просто стрелочка, aria-label -  для экранных дикторов описание этой кнопки -->
           <form action="#" class="footer__form">
             <input type="email" name="email" class="footer__input" placeholder="E-mail">
             <button class="btn-reset footer__btn" aria-label="Send E-mail">
